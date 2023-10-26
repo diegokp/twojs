@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/script.js"></script>
+</head>
+<body>
+    <script>
+// Make an instance of two and place it on the page.
+        var params = {
+        fullscreen: true,
+        fitted: false,
+        width: 640,
+        height: 480,
+        };
+        var elem = document.body;
+        var two = new Two(params).appendTo(elem);
+
+        // Two.js has convenient methods to make shapes and insert them into the scene.
+        var x = two.width * 0.5;
+        var y = two.height * 0.5;
+
+        var width = 300;
+        var height = 200;
+        var rect = two.makeRectangle(x, y, width, height);
+        rect.fill = '#4C26D8';
+        rect.opacity = 0.75;
+        rect.noStroke();
+
+
+        var line = two.makeLine(x-160, y+0, x+160, y+0);
+        line.stroke = '#FF5F06';
+        line.linewidth = 2;
+
+        var line2 = two.makeLine(x-55, y-110, x-55, y+110);
+        line2.stroke = '#FF5F06';
+        line2.linewidth = 2;
+
+        var line3 = two.makeLine(x+55, y-110, x+55, y+110);
+        line3.stroke = '#FF5F06';
+        line3.linewidth = 2;
+
+        // Don’t forget to tell two to draw everything to the screen
+        two.update();
+      </script>
+</body>
+</html>
